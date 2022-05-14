@@ -1,10 +1,16 @@
 import './App.css';
+import Header from './components/header/Header';
 
 const App = () => {
+  let school = 'coderHouse';
+
   return (
-    <div className="App">
-      hola mundo!!
-    </div>
+    <>
+    <Header/>
+      <div className="App">
+        hola mundo!! somos {school}
+      </div>
+    </>
   );
 }
 
