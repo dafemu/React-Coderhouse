@@ -1,4 +1,5 @@
 import React from 'react'
+import { CartWidget } from '../cartwidget/CartWidget'
 
 const Header = () => {
   return (
@@ -24,6 +25,7 @@ const Header = () => {
                     </li>
                 </ul>
                     <button className="btn btn-outline-light" type="submit">Iniciar Sesión</button>
+                    <CartWidget badge={4} />
             </div>
         </div>
     </nav>
