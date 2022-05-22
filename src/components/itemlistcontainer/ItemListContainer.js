@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({greeting}) => {
   return (
-    <div>Hola Mundo component ItemListContainer</div>
+    <div>{greeting} component ItemListContainer</div>
   )
 }
