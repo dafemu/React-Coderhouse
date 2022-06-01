@@ -17,10 +17,11 @@ export const ItemDetail = ({item}) => {
                     <h3>${item.price}</h3>
                     <p><b>Colores: </b>{item.colores}</p>
                     <p>{item.description}</p>
-                    <p><b>Size US:</b><div className='d-flex flex-row'>{sizes.map(size => {
-                        return <span className='m-2' style={{width: '50px', height: '30px', backgroundColor: 'white', color: 'black', border: '2px solid black', textAlign: 'center'}}>{size}</span>
-                    })}</div></p>
-                    <p><b>Cantidad:</b><ItemCount stock={5} initial={1}/></p>
+                    <p><b>Size US:</b></p>
+                    <div className='d-flex flex-row'>{sizes.map((size,index) => {
+                        return <span key={index} className='m-2' style={{width: '50px', height: '30px', backgroundColor: 'white', color: 'black', border: '2px solid black', textAlign: 'center'}}>{size}</span>
+                    })}</div>
+                    <p><b>Cantidad:</b></p><ItemCount stock={5} initial={1}/>
                 </div>
             </div>
         </div>
