@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import shoes from '../../mock/shoes';
 import { ItemDetail } from '../itemdetail/ItemDetail';
 
 const ItemDetailContainer = ({prop}) => {
 
     const [item, setItem] = useState([]);
+
+    //como se llamo en la ruta se debe llamar en el hook
+    const { id } = useParams();
     
     let funcionPromise = (array) => {
       return array
@@ -24,11 +28,12 @@ const ItemDetailContainer = ({prop}) => {
   
     useEffect(() => {
       getItem(2000, funcionPromise(shoes))
-      .then((datos) => { 
-        setItem(datos[8]);
+      .then((datos) => {
+        console.log("DATOS: ", datos); 
+        setItem(datos.find(item => item.id === parseInt(id)));
       })
       .catch((err) => console.log(err));
-    }, [])
+    }, [id])
 
   return (
     <>

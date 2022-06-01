@@ -1,4 +1,5 @@
 import React from 'react'
+import{ Link }from'react-router-dom';
 
 export const Item = ({id, title, price, pictureUrl}) => {
 
@@ -8,7 +9,7 @@ export const Item = ({id, title, price, pictureUrl}) => {
             <img src={pictureUrl} className="card-img-top" alt={title} />
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
-                <button href=" " className="btn btn-outline-dark">${price} COL</button>
+                <Link to={`/item/${id}`}><button className="btn btn-outline-dark">${price} COL</button></Link>
             </div>
         </div>
     </>
