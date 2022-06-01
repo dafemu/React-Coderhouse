@@ -120,7 +120,7 @@ let shoes = [
         "pictureUrl": "https://www.brokenchains.com.co/admin/modulos/gestorArchivos/files/catalogo/nike/20-05-22-nike/Broken-Chains-womens-air-jordan-4-retro-canvas-dq4909-100-02-2.jpg"
     },
     {
-        "id": "13",
+        "id": 13,
         "colores": "Cloud White / Cloud White / Royal Blue",
         "brand": "Adidas",
         "categoryId": "2",
@@ -130,7 +130,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1640887444/Tenis_Triple_Platforum_Lo_Blanco_H05049_002.jpg"
     },
     {
-        "id": "14",
+        "id": 14,
         "colores": "Rosa regio/Hielo lima/Toque de limón claro/Piedra roja",
         "brand": "Jordan",
         "categoryId": "2",
@@ -140,7 +140,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1630854183/calzado-jordan-delta-03-.jpg"
     },
     {
-        "id": "15",
+        "id": 15,
         "colores": "Sequoia/Sequoia-Zinnia-Eucalyptus Fog",
         "brand": "Nike",
         "categoryId": "2",
@@ -150,7 +150,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1653505121/Broken-Chains-Nike-dunk-low-avocado-dm7606-300-01-1.jpg"
     },
     {
-        "id": "16",
+        "id": 16,
         "colores": "Pearl White/Sail-Fossil Stone",
         "brand": "Nike",
         "categoryId": "2",
@@ -160,7 +160,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1653083398/Broken-Chains-Nike-Air-Force-1-DH0775-201-03-3%20copia.jpg"
     },
     {
-        "id": "17",
+        "id": 17,
         "colores": "Ceramic Pink / Boulder Grey / Twisted Coral",
         "brand": "Reebok",
         "categoryId": "2",
@@ -170,7 +170,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1616197076/Reebok_Legacy_83_Rosa_FY7318_01_standard-1.jpg"
     },
     {
-        "id": "18",
+        "id": 18,
         "colores": "Cloud White / Glory Mint / Cloud White",
         "brand": "Adidas",
         "categoryId": "2",
@@ -180,7 +180,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1630854164/Tenis_Forum_Low_Blanco_GX5072-1.jpg"
     },
     {
-        "id": "19",
+        "id": 19,
         "colores": "White/Dark Mocha-Atmosphere-Sail",
         "brand": "Jordan",
         "categoryId": "2",
@@ -190,7 +190,7 @@ let shoes = [
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/v1653336256/Broken-Chains-air-jordan-3-atmosphere-neapolitan-CK9246-102-02-2.jpg"
     },
     {
-        "id": "20",
+        "id": 20,
         "colores": "Cold Grey 6 / True Grey 8 / Blaze Yellow",
         "brand": "Reebok",
         "categoryId": "1",
