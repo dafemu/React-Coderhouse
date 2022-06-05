@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 import { ItemCount } from '../itemcount/ItemCount';
 
 export const ItemDetail = ({item}) => {
     let sizes = [6,7,8,9,10,11,12];
+    const [shoesCount, setShoesCount] = useState(0);
+    console.log("itemdetail shoe:", shoesCount);
+
+    //evento enviado hacia el itemcount
+    const onAdd = (shoesSelected) => {
+        alert('Añadiste ' + shoesSelected + ' zapatillas al carrito');
+        setShoesCount(shoesSelected);
+    };
   return (
     <>
         <div className='container-fluid'>
@@ -21,7 +30,14 @@ export const ItemDetail = ({item}) => {
                     <div className='d-flex flex-row'>{sizes.map((size,index) => {
                         return <span key={index} className='m-2' style={{width: '50px', height: '30px', backgroundColor: 'white', color: 'black', border: '2px solid black', textAlign: 'center'}}>{size}</span>
                     })}</div>
-                    <p><b>Cantidad:</b></p><ItemCount stock={5} initial={1}/>
+                    <p>
+                        <b>Cantidad:</b>
+                    </p>
+                    {
+                        shoesCount === 0
+                        ? <ItemCount stock={5} initial={shoesCount} onAdd={onAdd}/>
+                        : <Link to={'/cart'}><button className='btn btn-outline-success'>Check Out</button></Link>
+                    }
                 </div>
             </div>
         </div>
