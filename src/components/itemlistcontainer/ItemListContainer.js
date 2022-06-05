@@ -40,7 +40,6 @@ const ItemListContainer = ({greeting}) => {
         <h2>{greeting}</h2>
       </div>
       <ItemList items={datos}/>
-      <ItemCount stock={5} initial={1} />
     </>
   )
 }
