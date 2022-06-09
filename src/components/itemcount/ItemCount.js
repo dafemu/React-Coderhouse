@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 export const ItemCount = ({stock, initial, onAdd}) => {
     const [itemCount, setItemCount] = useState(initial);
-    console.log("itemcount shoe:", itemCount);
 
     const addCart = () => {
         if(itemCount < stock){

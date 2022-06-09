@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Link } from 'react-router-dom';
+import { CartContext } from '../cart/CartContext';
 import { ItemCount } from '../itemcount/ItemCount';
 
 export const ItemDetail = ({item}) => {
     let sizes = [6,7,8,9,10,11,12];
+    
     const [shoesCount, setShoesCount] = useState(0);
-    console.log("itemdetail shoe:", shoesCount);
+
+    const contextCart = useContext(CartContext)
 
     //evento enviado hacia el itemcount
     const onAdd = (shoesSelected) => {
         alert('Añadiste ' + shoesSelected + ' zapatillas al carrito');
         setShoesCount(shoesSelected);
+
+        //agregando el producto al carrito
+        contextCart.addItem(item, shoesSelected);
     };
   return (
     <>

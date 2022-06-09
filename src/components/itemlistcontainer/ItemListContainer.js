@@ -28,7 +28,6 @@ const ItemListContainer = ({greeting}) => {
   useEffect(() => {
     promesa(2000, funcionPromise(shoes))
     .then((datos) => { 
-      console.log("datos: ", datos);
       setDatos(id === undefined ?datos : datos.filter(product => product.categoryId === id));
     })
     .catch((err) => console.log(err));
