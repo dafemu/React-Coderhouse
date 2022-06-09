@@ -2,7 +2,6 @@ import React from 'react'
 import { Item } from '../item/Item';
 
 const ItemList = ({items}) => {
-  console.log("itenms: ", items)
 
   return (
     <>

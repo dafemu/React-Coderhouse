@@ -29,7 +29,6 @@ const ItemDetailContainer = ({prop}) => {
     useEffect(() => {
       getItem(2000, funcionPromise(shoes))
       .then((datos) => {
-        console.log("DATOS: ", datos); 
         setItem(datos.find(item => item.id === parseInt(id)));
       })
       .catch((err) => console.log(err));
