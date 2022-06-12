@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CartWidget } from '../cartwidget/CartWidget'
 import{ Link, NavLink } from'react-router-dom';
+import { CartContext } from '../cart/CartContext';
 
 const Header = () => {
+    const cartContext = useContext(CartContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
@@ -23,7 +25,7 @@ const Header = () => {
                     </li>
                 </ul>
                     <button className="btn btn-outline-light" type="submit">Iniciar Sesión</button>
-                    <CartWidget badge={4} />
+                    <CartWidget badge={cartContext.calcQuantityItems()} />
             </div>
         </div>
     </nav>
