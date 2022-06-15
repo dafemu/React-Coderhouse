@@ -35,7 +35,7 @@ let shoes = [
         "brand": "Jordan",
         "categoryId": "1",
         "title": "Air Jordan 3 Retro 'Kumquat'",
-        "description": "etalles característicos del modelo emblemático, las Air Jordan 3 Retro (GS) 'Kumquat' celebran momentos inspiradores de la leyenda que los creó. La parte superior está confeccionada en ante para mayor durabilidad, y la unidad Air-Sole protege contra impactos. La mediasuela de espuma ofrece amortiguación y la suela de goma cuenta con un diseño de tracción circular para mayor agarre. La combinación de tonos negros, rojos y animal print las convierten sin duda en la estrella de cualquier look.",
+        "description": "detalles característicos del modelo emblemático, las Air Jordan 3 Retro (GS) 'Kumquat' celebran momentos inspiradores de la leyenda que los creó. La parte superior está confeccionada en ante para mayor durabilidad, y la unidad Air-Sole protege contra impactos. La mediasuela de espuma ofrece amortiguación y la suela de goma cuenta con un diseño de tracción circular para mayor agarre. La combinación de tonos negros, rojos y animal print las convierten sin duda en la estrella de cualquier look.",
         "price": "849,950",
         "pictureUrl": "https://res.cloudinary.com/brokenchains/image/upload/c_scale,h_600,q_auto:best,w_600/Broken-Chains-nike-dunk-high-black-white-DJ6189-001-0-01.jpg"
     },
