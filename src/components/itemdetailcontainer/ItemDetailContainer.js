@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import shoes from '../../mock/shoes';
 import { ItemDetail } from '../itemdetail/ItemDetail';
+import { doc, onSnapshot } from "firebase/firestore";
+import db from '../../mock/firebaseConfig';
 
 const ItemDetailContainer = ({prop}) => {
 
@@ -9,30 +11,16 @@ const ItemDetailContainer = ({prop}) => {
 
     //como se llamo en la ruta se debe llamar en el hook
     const { id } = useParams();
-    
-    let funcionPromise = (array) => {
-      return array
-    }
-  
-    let getItem = (time, task) => {
-        return new Promise((resolve, reject) => {
-            if (true) {
-                setTimeout(() => {
-                  resolve(task)
-                }, time);
-            } else {
-                reject("Error");
-            }
-        });
-    }
-  
+
     useEffect(() => {
-      getItem(2000, funcionPromise(shoes))
-      .then((datos) => {
-        setItem(datos.find(item => item.id === parseInt(id)));
-      })
-      .catch((err) => console.log(err));
+      onSnapshot(doc(db, "products", id), (doc) => {
+        console.log("Current data: ", doc.data());
+        const itemFull = {id: doc.id, ...doc.data()};
+        console.log("itemFull ", itemFull);
+        setItem(itemFull);
+      });
     }, [id])
+
 
   return (
     <>
