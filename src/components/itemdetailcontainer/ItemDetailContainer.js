@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import shoes from '../../mock/shoes';
 import { ItemDetail } from '../itemdetail/ItemDetail';
 import { doc, onSnapshot } from "firebase/firestore";
 import db from '../../mock/firebaseConfig';
