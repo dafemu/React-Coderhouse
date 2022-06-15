@@ -25,8 +25,10 @@ const Cart = () => {
         <h3 className='bg-light'>CARRITO DE COMPRAS</h3>
         <div className='row'>
           <div className='col-12 text-center'>
-            <button className='btn btn-danger m-5' onClick={() => deleteCart()}>Vaciar el carrito</button>
-            {cartContext.cartList.length === 0 ? <Link to={'/'}><button className='btn btn-dark m-5'>Ir a comprar</button></Link> : ''}
+            {cartContext.cartList.length === 0 
+            ? <Link to={'/'}><button className='btn btn-dark m-5'>Ir a comprar</button></Link> 
+            : <button className='btn btn-danger m-5' onClick={() => deleteCart()}>Vaciar el carrito</button>
+          }
           </div>
         </div>
         <div className='row'>
@@ -60,7 +62,10 @@ const Cart = () => {
           }
           </div>
         </div>
-        <div className='row mt-5'>
+        {
+          cartContext.cartList.length === 0
+          ? null
+          :<div className='row mt-5'>
           <div className='col-6 m-auto'>
             <h4>Detalles del pedido</h4>
             <hr/>
@@ -77,6 +82,7 @@ const Cart = () => {
             {cartContext.cartList.length === 0 ? '' :<Link to={'/'}><button className='w-100 btn btn-outline-dark' onClick={() => purchase()}>Terminar comprar</button></Link>}
           </div>
         </div>
+        }
       </div>
     </>
   )

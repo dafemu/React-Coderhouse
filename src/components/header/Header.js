@@ -25,7 +25,7 @@ const Header = () => {
                     </li>
                 </ul>
                     <button className="btn btn-outline-light" type="submit">Iniciar Sesión</button>
-                    <CartWidget badge={cartContext.calcQuantityItems()} />
+                    <Link to={'/cart'}><CartWidget badge={cartContext.calcQuantityItems()} /></Link>
             </div>
         </div>
     </nav>
