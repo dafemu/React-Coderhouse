@@ -13,9 +13,7 @@ const ItemDetailContainer = ({prop}) => {
 
     useEffect(() => {
       onSnapshot(doc(db, "products", id), (doc) => {
-        console.log("Current data: ", doc.data());
         const itemFull = {id: doc.id, ...doc.data()};
-        console.log("itemFull ", itemFull);
         setItem(itemFull);
       });
     }, [id])
