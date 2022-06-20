@@ -17,6 +17,7 @@ const CartContextProvider = ({children}) => {
             setCartList([...cartList, item]);
         }else{
             isInCart.quantity += quantity;
+            setCartList([...cartList]);
         }
     };
 

@@ -19,16 +19,16 @@ const ItemListContainer = ({greeting}) => {
       return dataFromFirestore;
     }
     firebaseFetch()
-    .then(shoes => setDatos(shoes))
+    .then(shoes => setDatos(id === undefined ? shoes : shoes.filter(product => product.categoryId === id)))
     .catch(err => console.log(err));
-  }, [datos])
+  }, [datos, id])
 
   //componentWillUnmount
   useEffect(() => {
     return (() => {
       setDatos([]);
     })
-  }, [])
+  }, [id])
 
   return (
     <>

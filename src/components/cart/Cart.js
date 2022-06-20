@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
 import{ Link } from'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
+import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import db from '../../mock/firebaseConfig';
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
@@ -14,8 +16,40 @@ const Cart = () => {
     cartContext.deleteCart();
   };
 
+  //Creacion de la compra
   const purchase = () => {
-    alert('Gracias por tu compra');
+    const itemsForDB = cartContext.cartList.map(item => ({
+      id: item.id,
+      price: item.price,
+      title: item.title,
+      qty: item.quantity
+    }));
+    let order = {
+      buyer: {
+        email: 'david@david.com',
+        name: 'David',
+        phone: '1234567',
+      },
+      date: serverTimestamp(),
+      total: cartContext.calcTotalPurchase(),
+      items: itemsForDB
+    };
+    console.log(order);
+    const createOrderInFirestore = async() => {
+      const newOrdeRef = doc(collection(db, 'orders'));
+      await setDoc(newOrdeRef, order);
+      return newOrdeRef;
+    };
+    createOrderInFirestore()
+      .then(result => alert('Gracias por tu compra' + result.id))
+      .catch(err => console.log(err));
+
+    //stock
+    cartContext.cartList.forEach(async (item) => {
+      const itemRef = doc(db,'products',item.id);
+      await updateDoc(itemRef, {stock: increment(-item.quantity)});
+    });
+
     cartContext.deleteCart();
   };
 
