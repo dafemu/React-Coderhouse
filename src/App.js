@@ -5,6 +5,7 @@ import ItemListContainer from './components/itemlistcontainer/ItemListContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/cart/Cart';
 import CartContextProvider from './components/cart/CartContext';
+import Checkout from './components/checkout/Checkout';
 
 const App = () => {
   let greeting = 'Bienvenido a la tienda de sneakers con mas hype';
@@ -18,6 +19,7 @@ const App = () => {
               <Route exact path='/category/:id' element={<ItemListContainer greeting={greeting}/>} />
               <Route exact path='/item/:id' element={<ItemDetailContainer />} />
               <Route exact path='/cart' element={<Cart />}/>
+              <Route excat path='/checkout' element={<Checkout/>} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

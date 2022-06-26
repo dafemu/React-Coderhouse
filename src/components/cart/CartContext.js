@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { useState } from "react";
-import CurrencyFormat from 'react-currency-format';
 
 export const CartContext = createContext();
 
